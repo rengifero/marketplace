@@ -1,0 +1,9 @@
+{
+  "name": "dental-care-web-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/dental-care-web-e2e/src",
+  "implicitDependencies": ["dental-care-web"],
+  "// targets": "to see all targets run: nx show project dental-care-web-e2e --web",
+  "targets": {}
+}

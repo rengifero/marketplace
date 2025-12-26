@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out-tsc/@dental-care/dental-care-backend-e2e",
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
+    "strict": false
+  },
+  "include": ["jest.config.ts", "src/**/*.ts"],
+  "references": []
+}

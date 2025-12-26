@@ -1,0 +1,40 @@
+import { CommonModule } from '@angular/common';
+import { Component, effect, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CartStore } from '../stores/card.store';
+
+
+@Component({
+  selector: 'app-header',
+  imports: [CommonModule, RouterLink],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
+})
+export class HeaderComponent {
+
+  previousCount = 0
+  isCartBouncing = signal(false)
+
+    cartStore = inject(CartStore);
+
+
+    constructor (){
+effect (()=>{
+
+  const currentCount = this.cartStore.totalItems();
+
+  if ( currentCount && currentCount > this.previousCount){
+this.isCartBouncing.set(true);
+
+setTimeout (() =>{
+
+  this.isCartBouncing =signal(false);
+},1000)
+
+  }
+
+})
+
+    }
+  
+}

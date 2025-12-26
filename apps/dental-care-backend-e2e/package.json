@@ -1,0 +1,26 @@
+{
+  "name": "@dental-care/dental-care-backend-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@dental-care/dental-care-backend"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/dental-care-backend-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@dental-care/dental-care-backend:build",
+          "@dental-care/dental-care-backend:serve"
+        ]
+      }
+    }
+  }
+}
